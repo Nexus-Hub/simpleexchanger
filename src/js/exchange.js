@@ -1,5 +1,4 @@
-require('dotenv').config()
-const API_KEY = process.env.API_KEY;
+const API_KEY = '326aa176990b406a8cf17b41b23450c9';
 const API_URL_EXCHANGE_RATES = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`;
 const API_URL_CRYPTOCOMPARE = `https://min-api.cryptocompare.com/data/price`;
 
