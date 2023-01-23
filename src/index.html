@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Exchanger Calculator</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="font-mono bg-gray-900 text-white">
+    <div class="grid md:grid-cols-3"><!-- content wrapper -->
+        <div class="md:col-span-1 md:flex md:justify-end">
+            <nav>
+                <div>
+                    <h1 class="flex justify-center font-rowdies text-4xl p-4">
+                        <a class="hover:text-green-700">Simple Exchanger</a>
+                    </h1>
+                    <div class="hover:text-green-700 flex justify-center px-4 cursor-pointer md:hidden" id="menuClick">
+                        <svg class="w-12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+                          </svg>
+                    </div>
+                    <div>
+                    <header class="p-4">
+                        <h2 class="font-teko flex text-3xl justify-center uppercase hover:text-green-700">Currency exchange
+                            calculator
+                        </h2>
+                    </div>
+
+                    </header>
+                </div>
+                <ul class="text-sm hidden md:block" id="menu">
+                    <li class="hover:text-green-700 py-1">
+                        <a href="#" class="px-4 flex justify-end md:border-r-4">
+                            <span>Home</span>
+                            <svg class="w-5 ml-2" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                </path>
+                            </svg>
+                            
+                        </a>
+                    </li>
+                    <li class="hover:text-green-700 py-1">
+                        <a href="#" class="px-4 flex justify-end md:border-r-4 border-gray-900">
+                            <span>About</span>
+                            <svg class="w-5 ml-2" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                                </path>
+                            </svg>
+                            
+                        </a>
+                    </li>
+                    <li class="hover:text-green-700 py-1">
+                        <a href="#" class="px-4 flex justify-end md:border-r-4 border-gray-900">
+                            <span>Contact</span>
+                            <svg class="w-5 ml-2" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                                </path>
+                            </svg>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div><!--end nav -->
+        <main class="px-16 py-6 md:col-span-2">
+
+<div class="font-rowdies"> <!-- CALCULADORA -->
+    <form class="">
+      <label for="amount" class="">Amount:</label>
+      <input type="text" id="amount" name="amount" class="rounded-full text-green-700 ml-2">
+      <select id="from" name="from" class="rounded-full text-green-700">
+        <option value="USD">USD</option>
+        <option value="CAD">CAD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="AUD">AUD</option>
+        <option value="JPY">JPY</option>
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+        <option value="BNB">BNB</option>
+        <option value="XRP">XRP</option>
+      </select>
+
+      <label for="to" class="ml-2">To:</label>
+      <select id="to" name="to" class="rounded-full text-green-700 ml-2">
+        <option value="USD">USD</option>
+        <option value="CAD">CAD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="AUD">AUD</option>
+        <option value="JPY">JPY</option>
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+        <option value="BNB">BNB</option>
+        <option value="XRP">XRP</option>
+      </select>
+
+      <button type="button" class="button-base border-white border-2 hover:text-green-700 hover:bg-white ml-4" id="convert-button" onclick="convertCurrency(parseFloat(amount.value), from.value, to.value)">Calculate</button>
+    </form>
+    <p class="py-6 text-4xl border-b" id="result"></p>    
+</div> <!-- FIN DE LA CALCULADORA -->
+
+            <div>
+                <h4 class="text-title-base border-b">QUICK SETTINGS: FIAT to FIAT</h4>
+                <div class="mt-1 grid lg:grid-cols-3 gap-10">
+                    <!-- cards go here -->
+                    <div class="card">
+                        <div>
+                            <a><img src="./img/USD-to-CAD.png" alt="USD to CAD" class="w-full h-32 sm:h48 object-cover"></a>
+                        </div>
+                        <div>
+                            <span class="flex justify-center text-exchange-name">USD to CAD</span>
+                            <span class="flex justify-center text-sm">United States Dollars to Canadian Dollars</span>
+                        </div>
+                        <div class="rate-label-badge">
+                            <span>
+                                <svg class="quicksetting-icon" id="USD-to-CAD" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <a><img src="./img/USD-to-EUR.png" alt="USD to EUR" class="w-full h-32 sm:h48 object-cover"></a>
+                        </div>
+                        <div>
+                            <span class="flex justify-center text-exchange-name">USD to EUR</span>
+                            <span class="flex justify-center text-sm">United States Dollars to Euro</span>
+                        </div>
+                        <div class="rate-label-badge">
+                            <span>
+                                <svg class="quicksetting-icon" id="USD-to-EUR" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <a><img src="./img/USD-to-GBP.png" alt="USD to GBP" class="w-full h-32 sm:h48 object-cover"></a>
+                        </div>
+                        <div>
+                            <span class="flex justify-center text-exchange-name">USD to GBP</span>
+                            <span class="flex justify-center text-sm">United States Dollars to Pound Sterling</span>
+                        </div>
+                        <div class="rate-label-badge">
+                            <span>
+                                <svg class="quicksetting-icon" id="USD-to-GBP" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="text-title-base border-b border-t mb-2">QUICK SETTINGS: FIAT to CRYPTO</h4>
+                <div class="mt-1 grid lg:grid-cols-3 gap-10">
+                    <!-- cards go here -->
+                    <div class="card">
+                        <div>
+                            <a><img src="./img/USD-to-BTC.png" alt="USD to BTC"class="w-full h-32 sm:h48 object-cover"></a>
+                        </div>
+                        <div>
+                            <span class="flex justify-center text-exchange-name">USD to BTC</span>
+                            <span class="flex justify-center text-sm">United States Dollars to Bitcoin</span>
+                        </div>
+                        <div class="rate-label-badge">
+                            <span>
+                                <svg class="quicksetting-icon" id="USD-to-BTC" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <a><img src="./img/USD-to-ETH.png" alt="USD to ETH"class="w-full h-32 sm:h48 object-cover"></a>
+                        </div>
+                        <div>
+                            <span class="flex justify-center text-exchange-name">USD to ETH</span>
+                            <span class="flex justify-center text-sm">United States Dollars to Ethereum</span>
+                        </div>
+                        <div class="rate-label-badge">
+                            <span>
+                                <svg class="quicksetting-icon" id="USD-to-ETH" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t mt-2 pt-2 flex justify-center">
+                    <span class="italic text-xs">FIAT to FIAT Rates provided by Open Exchange Rates</span>
+                </div>
+                <div class="mt-2 pt-2 flex justify-center">
+                    <span class="italic text-xs">FIAT to Crypto Rates provided by Crypto Compare</span>
+                </div>
+                <div class="flex justify-center">
+                    <h5 class="font-style: italic p-2">Currently under developtment by Carlos</h5>
+                </div>
+            </div>
+
+        </main>
+    </div>
+<script src="./js/menu.min.js"></script>
+<script src="./js/exchange.min.js"></script>
+<script src="./js/quicksettings.min.js"></script>
+</body>
+</html>

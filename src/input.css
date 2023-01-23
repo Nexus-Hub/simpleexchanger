@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=Teko:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card{
+    @apply bg-white text-black rounded-3xl overflow-hidden shadow-md mt-1 pb-2 relative hover:shadow-2xl
+}
+
+.rate-label-badge{
+    @apply bg-gray-200 text-black text-xs uppercase font-bold rounded-full absolute p-2 top-0 ml-2 mt-2
+}
+
+.button-base{
+@apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider
+}
+
+.text-title-base{
+    @apply font-teko font-bold mt-6 pb-2 text-2xl
+}
+
+.text-exchange-name{
+    @apply text-7xl mt-1 pb-2 font-teko
+}
+
+.quicksetting-icon{
+    @apply w-12 hover:text-green-700 hover:fill-green-700 cursor-pointer
+}
