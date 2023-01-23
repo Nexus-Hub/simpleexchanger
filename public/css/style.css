@@ -930,12 +930,12 @@ select{
   margin-top: 0.25rem;
   padding-bottom: 0.5rem;
   font-family: Teko;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .quicksetting-icon{
-  width: 1.5rem;
+  width: 3rem;
   cursor: pointer;
 }
 
